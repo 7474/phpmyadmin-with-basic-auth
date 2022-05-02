@@ -1,0 +1,27 @@
+version: '3'
+services: 
+  db_server:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_ROOT_HOST: "%"
+    networks:
+      pwithb:
+
+  phpmyadmin_with_basic_auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db_server
+      BACIC_AUTH_USER: test_user
+      BACIC_AUTH_PASSWORD: test_password
+    ports:
+     - 8080:80
+    networks:
+      pwithb:
+
+networks:
+    pwithb:
+        driver: bridge
