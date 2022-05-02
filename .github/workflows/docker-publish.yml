@@ -70,7 +70,8 @@ jobs:
         
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+#         uses: aws-actions/amazon-ecr-login@v1
+        run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/g2g6t4l2
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
