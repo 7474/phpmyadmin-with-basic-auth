@@ -25,8 +25,8 @@ module "public_ecr" {
 
   public_repository_catalog_data = {
     description = "Docker container for phpMyAdmin with basic auth."
-    # about_text        = file("${path.module}/files/ABOUT.md")
-    # usage_text        = file("${path.module}/files/USAGE.md")
+    about_text        = "See. https://github.com/7474/phpmyadmin-with-basic-auth"
+    usage_text        = "See. https://github.com/7474/phpmyadmin-with-basic-auth"
     operating_systems = ["Linux"]
     architectures     = ["x86"]
     # logo_image_blob   = filebase64("${path.module}/files/clowd.png")
