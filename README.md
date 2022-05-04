@@ -12,9 +12,9 @@
 GitHub Packages 及び ECR Public に公開しています。
 
 - https://github.com/7474/phpmyadmin-with-basic-auth/pkgs/container/phpmyadmin-with-basic-auth
-  - `docker pull ghcr.io/7474/phpmyadmin-with-basic-auth:master`
+  - `docker pull ghcr.io/7474/phpmyadmin-with-basic-auth:latest`
 - https://gallery.ecr.aws/g2g6t4l2/phpmyadmin-with-basic-auth-repo
-  - `docker pull public.ecr.aws/g2g6t4l2/phpmyadmin-with-basic-auth-repo:master`
+  - `docker pull public.ecr.aws/g2g6t4l2/phpmyadmin-with-basic-auth-repo:latest`
 
 ## Example
 
