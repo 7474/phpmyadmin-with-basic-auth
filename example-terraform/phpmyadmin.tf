@@ -13,7 +13,7 @@ resource "aws_apprunner_service" "phpmyadmin" {
           BACIC_AUTH_PASSWORD = var.basic_auth_password
         }
       }
-      image_identifier      = "public.ecr.aws/g2g6t4l2/phpmyadmin-with-basic-auth-repo:master"
+      image_identifier      = "public.ecr.aws/g2g6t4l2/phpmyadmin-with-basic-auth-repo:latest"
       image_repository_type = "ECR_PUBLIC"
     }
   }
