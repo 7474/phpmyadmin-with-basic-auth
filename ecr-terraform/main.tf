@@ -29,7 +29,7 @@ module "public_ecr" {
     usage_text        = "See. https://github.com/7474/phpmyadmin-with-basic-auth"
     operating_systems = ["Linux"]
     architectures     = ["x86"]
-    # logo_image_blob   = filebase64("${path.module}/files/clowd.png")
+    logo_image_blob   = filebase64("${path.module}/icon.png")
   }
 }
 
