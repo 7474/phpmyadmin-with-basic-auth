@@ -9,6 +9,9 @@
 - `BACIC_AUTH_USER`
 - `BACIC_AUTH_PASSWORD`
 
+また `PMA_SSL` 環境変数に `1` を設定することでSSL/TLS設定を有効にしてサーバに接続するようになります。
+PlanetScaleなどのDBaaSに接続する際に設定します。
+
 GitHub Packages 及び ECR Public に公開しています。
 
 - https://github.com/7474/phpmyadmin-with-basic-auth/pkgs/container/phpmyadmin-with-basic-auth
@@ -18,6 +21,6 @@ GitHub Packages 及び ECR Public に公開しています。
 
 ## Example
 
-- [docker-compose.yml](docker-compose.yml): docker-compose の例です
+- [docker-compose.yml](src/docker-compose.yml): docker-compose の例です
 - [example-terraform](example-terraform): [AWS App Runner](https://aws.amazon.com/jp/apprunner/) にホスティングするTerraformコードの例です
   ![app-runner-phpmyadmin](https://user-images.githubusercontent.com/4744735/166311582-7f600b45-2fda-42aa-a897-0ceb395c375d.gif)
