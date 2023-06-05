@@ -13,6 +13,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
+      PMA_SSL: 1
       PMA_ARBITRARY: 1
       PMA_HOST: db_server
       BACIC_AUTH_USER: test_user
