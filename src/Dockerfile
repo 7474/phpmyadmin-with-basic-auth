@@ -1,4 +1,4 @@
-FROM phpmyadmin/phpmyadmin:5.1.3
+FROM phpmyadmin/phpmyadmin:5.2.1
 
 COPY basic-auth.conf /etc/apache2/conf-available
 RUN a2enconf basic-auth
