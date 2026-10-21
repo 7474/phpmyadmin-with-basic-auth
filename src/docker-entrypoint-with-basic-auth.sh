@@ -1,5 +1,6 @@
 #!/bin/bash
+set -e
 
-htpasswd -cb /etc/apache2/.htpasswd "$BACIC_AUTH_USER" "$BACIC_AUTH_PASSWORD"
+printf '%s' "$BACIC_AUTH_PASSWORD" | htpasswd -ci /etc/apache2/.htpasswd "$BACIC_AUTH_USER"
 
-/docker-entrypoint.sh "$@"
+exec /docker-entrypoint.sh "$@"
