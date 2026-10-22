@@ -2,27 +2,9 @@
 
 "安心" のために https://github.com/phpmyadmin/docker にBASIC認証を追加できるようにしたコンテナイメージです。
 
-公式イメージ (`phpmyadmin/phpmyadmin`) は再ビルドが遅れて脆弱性を含むPHPイメージのまま配布されることがあるため、
-公式イメージを `FROM` するのではなく、[公式イメージのApache版Dockerfile](https://github.com/phpmyadmin/docker/blob/master/apache/Dockerfile) を本リポジトリに取り込み、
-[PHP公式イメージ](https://hub.docker.com/_/php) (`php:8.3-apache`) から直接ビルドしています。
-
-- phpMyAdmin: 5.2.3（対応PHPは `>=7.2,<8.4` のため PHP 8.3 系を使用。参照: https://www.phpmyadmin.net/downloads/ ）
-- ベースイメージ及び Debian パッケージの更新を取り込むため、GitHub Actions で毎週再ビルドしています。
-
-## Files
-
-| ファイル | 内容 |
-| --- | --- |
-| [src/Dockerfile](src/Dockerfile) | 公式イメージの [apache/Dockerfile](https://github.com/phpmyadmin/docker/blob/master/apache/Dockerfile) をベースに BASIC認証の設定を追加したもの |
-| [src/config.inc.php](src/config.inc.php), [src/helpers.php](src/helpers.php), [src/docker-entrypoint.sh](src/docker-entrypoint.sh) | 公式イメージの [apache/](https://github.com/phpmyadmin/docker/tree/master/apache) から無改変で取り込んだもの |
-| [src/config.user.inc.php](src/config.user.inc.php) | `PMA_SSL` 用の追加設定 |
-| [src/basic-auth.conf](src/basic-auth.conf), [src/docker-entrypoint-with-basic-auth.sh](src/docker-entrypoint-with-basic-auth.sh) | BASIC認証の設定 |
-
-phpMyAdmin を更新する際は、公式リポジトリの `apache/` 配下の差分を取り込み `VERSION` / `SHA256` を更新してください。
-
 ## Usage
 
-[公式イメージの環境変数](https://github.com/phpmyadmin/docker#environment-variables-summary)に加えて以下の環境変数を指定することでBASIC認証を設定できます。
+ベースイメージの設定に加えて以下の環境変数を指定することでBASIC認証を設定できます。
 
 - `BACIC_AUTH_USER`
 - `BACIC_AUTH_PASSWORD`
